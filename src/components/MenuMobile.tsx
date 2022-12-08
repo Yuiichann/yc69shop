@@ -12,10 +12,12 @@ interface Props {
 }
 
 const MenuMobile = ({ isMenuMobileOpen, setIsMenuMobileOpen }: Props) => {
+  // chưa path của 1 item Menu, nếu item đó có children
   const [subMenuOpen, setSubmenuOpen] = useState('');
 
   const { pathname } = useLocation();
 
+  // nếu itemMenu có sub menu mới thực hiện hành động mở sub menu
   const handleOpenSubmenu = (item: typeof MenuItems[0]) => {
     if (item.children && item.children.length > 0) {
       setSubmenuOpen(item.path);
@@ -25,6 +27,7 @@ const MenuMobile = ({ isMenuMobileOpen, setIsMenuMobileOpen }: Props) => {
   const handleCloseSubmenu = (
     e: React.MouseEvent<HTMLLIElement, MouseEvent>
   ) => {
+    // ngăn nổi bọt
     e.stopPropagation();
 
     setSubmenuOpen('');
@@ -32,8 +35,10 @@ const MenuMobile = ({ isMenuMobileOpen, setIsMenuMobileOpen }: Props) => {
 
   return (
     <div
-      className={`fixed top-24 left-0 w-screen min-h-[calc(100vh-6rem)] shadow-topShadow bg-white ${
-        isMenuMobileOpen ? 'block' : 'hidden'
+      className={`fixed top-24 left-0 w-screen min-h-[calc(100vh-6rem)] shadow-topShadow bg-white effect ${
+        isMenuMobileOpen
+          ? 'visible opacity-100 scale-100'
+          : 'invisible opacity-0 scale-0'
       }`}
     >
       {/* menu */}
@@ -61,6 +66,7 @@ const MenuMobile = ({ isMenuMobileOpen, setIsMenuMobileOpen }: Props) => {
                 </div>
               )}
 
+              {/* render submenu */}
               {/* Sub menu */}
               {item.children && (
                 <div
@@ -70,7 +76,7 @@ const MenuMobile = ({ isMenuMobileOpen, setIsMenuMobileOpen }: Props) => {
                 >
                   <ul className="w-full">
                     <li
-                      className="flex items-center space-x-1 uppercase hover:text-main text-16 font-semibold cursor-pointer"
+                      className="flex items-center space-x-1 uppercase hover:text-main py-2 text-18 font-semibold cursor-pointer"
                       onClick={handleCloseSubmenu}
                     >
                       <MdOutlineKeyboardArrowLeft />

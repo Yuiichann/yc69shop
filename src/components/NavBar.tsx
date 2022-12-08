@@ -46,7 +46,3 @@ export const NavBarDesktop = memo(() => {
     </ul>
   );
 });
-
-export const NavBarMobile = memo(() => {
-  return <div></div>;
-});

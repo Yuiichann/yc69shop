@@ -11,12 +11,13 @@ import { useState } from 'react';
 const Header = () => {
   const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
 
+  // tắt mở menu
   const handleToggleMenu = () => {
     setIsMenuMobileOpen(!isMenuMobileOpen);
   };
 
   return (
-    <header className="">
+    <header className="select-none">
       <div className="container">
         <div className="flex flex-col md:flex-row py-2 gap-1">
           {/* Logo, icon buton on mobile */}

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import y69ShopApi from '../api/y69shopApi';
 import Layout from '../components/Layout';
 
 const Products = () => {
   return (
     <Layout>
-      <h1>Products</h1>
+      <div className="container">Products</div>
     </Layout>
   );
 };

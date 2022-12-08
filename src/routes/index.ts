@@ -3,6 +3,7 @@ import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import Introduce from '../pages/Introduce';
 import Products from '../pages/Products';
+import Search from '../pages/Search';
 import ShoppingCart from '../pages/ShoppingCart';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
@@ -33,6 +34,11 @@ const routes: RoutesProps[] = [
     name: 'Liên hệ',
     path: '/lien-he',
     element: Contact,
+  },
+  {
+    name: 'Tìm kiếm',
+    path: '/tim-kiem',
+    element: Search,
   },
   {
     name: 'Giỏ hàng',

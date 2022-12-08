@@ -1,5 +1,5 @@
 const apiConfig = {
-  baseUrl: "http://localhost:5000",
+  baseUrl: 'https://api-yc69shop.vercel.app',
 };
 
 export default apiConfig;

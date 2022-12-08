@@ -1,11 +1,22 @@
 import { memo, useState } from 'react';
 import { IoSearchSharp } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 
 const SearchInput = () => {
+  const navigate = useNavigate();
   const [keyword, setKeyword] = useState('');
 
-  const handleClickSearch = () => {
-    console.log(keyword);
+  const handleSearch = () => {
+    if (!keyword) return;
+
+    navigate(`/tim-kiem?k=${keyword}`);
+  };
+
+  const handleEnterSearch = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== 'Enter') return;
+    if (!keyword) return;
+
+    navigate(`/tim-kiem?k=${keyword}`);
   };
 
   return (
@@ -16,10 +27,11 @@ const SearchInput = () => {
         placeholder="Tìm kiếm sản phẩm . . ."
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
+        onKeyDown={handleEnterSearch}
       />
       <div
         className="px-2 py-1 text-24 bg-main border border-main text-white rounded-tr-md rounded-br-md"
-        onClick={handleClickSearch}
+        onClick={handleSearch}
       >
         <IoSearchSharp />
       </div>
