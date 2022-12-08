@@ -1,7 +1,7 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout';
 import routes from './routes';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -15,6 +15,9 @@ const App = () => {
           />
         ))}
       </Routes>
+      <div className="Toastify">
+        <ToastContainer autoClose={2500} />
+      </div>
     </>
   );
 };

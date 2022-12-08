@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        header: '150px',
+        headerMobile: '90px',
+        headerDesktop: '130px',
       },
       fontFamily: {
         main: 'Quicksand, sans-serif',
@@ -13,6 +14,7 @@ module.exports = {
         12: '12px',
         14: '14px',
         16: '16px',
+        18: '18px',
         24: '24px',
         32: '32px',
         46: '46px',
@@ -30,6 +32,9 @@ module.exports = {
         padding: {
           DEFAULT: '1rem',
         },
+      },
+      boxShadow: {
+        topShadow: '0 -1px 15px rgb(0 0 0 / 0.3)',
       },
     },
   },

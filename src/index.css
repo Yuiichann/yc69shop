@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @layer base {
   body {
-    @apply text-16 font-main font-medium leading-normal overflow-x-hidden;
+    @apply text-16 text-textColor font-main font-medium leading-normal overflow-x-hidden scrollbar-w-1 scrollbar-track-gray-400 scrollbar-thumb-main;
   }
 
   #root {
@@ -18,5 +22,13 @@
 
   .effect {
     @apply transition-all ease-in-out duration-200;
+  }
+
+  .icon-btn {
+    @apply p-3 block cursor-pointer text-24 rounded-full hover:bg-gray-100 effect;
+  }
+
+  .button {
+    @apply px-4 py-2 text-18 border-2 border-main text-main font-bold rounded-sm min-w-[130px] text-center hover:text-white hover:bg-main effect;
   }
 }

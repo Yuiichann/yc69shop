@@ -32,8 +32,8 @@ const TopBar = () => {
           </div>
 
           {/* Login / register / tai khoan */}
-          <div className="group relative after:absolute after:w-full after:hidden hover:after:block after:h-5 after:left-0 after:top-5">
-            <div className="flex items-center space-x-1 cursor-default hover:text-hoverColor effect">
+          <div className="group relative z-10 after:absolute after:w-full after:hidden hover:after:block after:h-5 after:left-0 after:top-5">
+            <div className="flex items-center space-x-1 cursor-default group-hover:text-hoverColor effect">
               <FaUserAlt />
               <span>Tài khoản</span>
               <MdOutlineKeyboardArrowDown />
@@ -42,7 +42,7 @@ const TopBar = () => {
             <ul className="absolute top-[130%] -left-10 hidden group-hover:flex flex-col bg-white shadow-md rounded-md">
               <li>
                 <Link
-                  to="/"
+                  to="/dang-nhap"
                   className="flex items-center space-x-2 px-4 py-2 cursor-pointer min-w-[150px] hover:text-hoverColor"
                 >
                   <MdLogin />
@@ -51,7 +51,7 @@ const TopBar = () => {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/dang-ky"
                   className="flex items-center space-x-2 px-4 py-2 cursor-pointer min-w-[150px] hover:text-hoverColor"
                 >
                   <FaRegRegistered />
